@@ -1,9 +1,13 @@
 run_analysis <- function() {
 	     ### Read in Files
-	     X_train = read.table("UCI_HAR_Dataset/train/X_train.txt")
-	     X_test = read.table("UCI_HAR_Dataset/test/X_test.txt")
-	     y_train = read.table("UCI_HAR_Dataset/train/y_train.txt")
-	     y_test = read.table("UCI_HAR_Dataset/test/y_test.txt")
+	     #dir_train = "UCI_HAR_Dataset/train/"
+	     #dir_test = "UCI_HAR_Dataset/test/"
+	     dir_train = ""
+	     dir_test = ""
+	     X_train = read.table(paste(dir_train, "X_train.txt", sep = ""))
+	     X_test = read.table(paste(dir_test, "X_test.txt", sep = ""))
+	     y_train = read.table(paste(dir_train, "y_train.txt", sep = ""))
+	     y_test = read.table(paste(dir_test, "y_test.txt", sep = ""))
 	
      
 	     ### Merge training and test
@@ -47,5 +51,5 @@ run_analysis <- function() {
 	     
 	     
 	     ### Write out tidy data set
-	     write.table(X_tidy, file = "UCI_HAR_Dataset/tidy_data.txt")
+	     write.table(X_tidy, file = "tidy_data.txt", row.names = FALSE)
 }

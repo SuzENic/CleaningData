@@ -2,9 +2,12 @@ Companion to run_analysis.R
 
              ### Read in Files
 	     read in x_train.txt and x_test.txt
+	     It's set up to have everything in the working directory, but there is an 
+	     option to have test and train in different directories. 
 
              ### Merge training	and test
-	     merged them into one large data table with rbind
+	     merged train and test into one large data table with rbind for both X (measurements)
+	     and y (factor of activities)
 	     
              ### Extract mean and Standard Deviation information
 	     read in the column names from features.txt. Reorder them to be column names 
@@ -25,4 +28,4 @@ Companion to run_analysis.R
 	     Use the factors to group the data and find the averages for each activity. 
 
 	     ### Write out tidy data set
-	     write out to tidy_data.txt in the UCI_HAR_Dataset directory
+	     write out to tidy_data.txt in the working directory. row names is set to false. 
