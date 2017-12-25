@@ -1,0 +1,125 @@
+Samsung data taken under 6 conditions:
+1 WALKING
+2 WALKING_UPSTAIRS
+3 WALKING_DOWNSTAIRS
+4 SITTING
+5 STANDING
+6 LAYING
+encoded in the "y" files. 
+
+The kinds of data are:
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+Where t indicates time domain measurements and f indicates the frequency domain result of fft. 
+
+This tidy data set includes information on the means and standard deviations of those values. 
+ 
+mean(): Mean value
+std(): Standard deviation
+
+The column names are now:
+
+ [1] "timebodyaccmeanx"                 
+ [2] "timebodyaccmeany"                 
+ [3] "timebodyaccmeanz"                 
+ [4] "timegravityaccmeanx"              
+ [5] "timegravityaccmeany"              
+ [6] "timegravityaccmeanz"              
+ [7] "timebodyaccjerkmeanx"             
+ [8] "timebodyaccjerkmeany"             
+ [9] "timebodyaccjerkmeanz"             
+[10] "timebodygyromeanx"                
+[11] "timebodygyromeany"                
+[12] "timebodygyromeanz"                
+[13] "timebodygyrojerkmeanx"            
+[14] "timebodygyrojerkmeany"            
+[15] "timebodygyrojerkmeanz"            
+[16] "timebodyaccmagmean"               
+[17] "timegravityaccmagmean"            
+[18] "timebodyaccjerkmagmean"           
+[19] "timebodygyromagmean"              
+[20] "timebodygyrojerkmagmean"          
+[21] "freqbodyaccmeanx"                 
+[22] "freqbodyaccmeany"                 
+[23] "freqbodyaccmeanz"                 
+[24] "freqbodyaccmeanfreqx"             
+[25] "freqbodyaccmeanfreqy"             
+[26] "freqbodyaccmeanfreqz"             
+[27] "freqbodyaccjerkmeanx"             
+[28] "freqbodyaccjerkmeany"             
+[29] "freqbodyaccjerkmeanz"             
+[30] "freqbodyaccjerkmeanfreqx"         
+[31] "freqbodyaccjerkmeanfreqy"         
+[32] "freqbodyaccjerkmeanfreqz"         
+[33] "freqbodygyromeanx"                
+[34] "freqbodygyromeany"                
+[35] "freqbodygyromeanz"                
+[36] "freqbodygyromeanfreqx"            
+[37] "freqbodygyromeanfreqy"            
+[38] "freqbodygyromeanfreqz"            
+[39] "freqbodyaccmagmean"               
+[40] "freqbodyaccmagmeanfreq"           
+[41] "freqbodybodyaccjerkmagmean"       
+[42] "freqbodybodyaccjerkmagmeanfreq"   
+[43] "freqbodybodygyromagmean"          
+[44] "freqbodybodygyromagmeanfreq"      
+[45] "freqbodybodygyrojerkmagmean"      
+[46] "freqbodybodygyrojerkmagmeanfreq"  
+[47] "angletbodyaccmeangravity"         
+[48] "angletbodyaccjerkmeangravitymean" 
+[49] "angletbodygyromeangravitymean"    
+[50] "angletbodygyrojerkmeangravitymean"
+[51] "anglexgravitymean"                
+[52] "angleygravitymean"                
+[53] "anglezgravitymean"                
+[54] "timebodyaccstdx"                  
+[55] "timebodyaccstdy"                  
+[56] "timebodyaccstdz"                  
+[57] "timegravityaccstdx"               
+[58] "timegravityaccstdy"               
+[59] "timegravityaccstdz"               
+[60] "timebodyaccjerkstdx"              
+[61] "timebodyaccjerkstdy"              
+[62] "timebodyaccjerkstdz"              
+[63] "timebodygyrostdx"                 
+[64] "timebodygyrostdy"                 
+[65] "timebodygyrostdz"                 
+[66] "timebodygyrojerkstdx"             
+[67] "timebodygyrojerkstdy"             
+[68] "timebodygyrojerkstdz"             
+[69] "timebodyaccmagstd"                
+[70] "timegravityaccmagstd"             
+[71] "timebodyaccjerkmagstd"            
+[72] "timebodygyromagstd"               
+[73] "timebodygyrojerkmagstd"           
+[74] "freqbodyaccstdx"                  
+[75] "freqbodyaccstdy"                  
+[76] "freqbodyaccstdz"                  
+[77] "freqbodyaccjerkstdx"              
+[78] "freqbodyaccjerkstdy"              
+[79] "freqbodyaccjerkstdz"              
+[80] "freqbodygyrostdx"                 
+[81] "freqbodygyrostdy"                 
+[82] "freqbodygyrostdz"                 
+[83] "freqbodyaccmagstd"                
+[84] "freqbodybodyaccjerkmagstd"        
+[85] "freqbodybodygyromagstd"           
+[86] "freqbodybodygyrojerkmagstd"       
+[87] "activity"

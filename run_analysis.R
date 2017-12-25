@@ -1,9 +1,9 @@
 run_analysis <- function() {
 	     ### Read in Files
-	     #dir_train = "UCI_HAR_Dataset/train/"
-	     #dir_test = "UCI_HAR_Dataset/test/"
-	     dir_train = ""
-	     dir_test = ""
+	     dir_train = "UCI_HAR_Dataset/train/"
+	     dir_test = "UCI_HAR_Dataset/test/"
+	     #dir_train = ""
+	     #dir_test = ""
 	     X_train = read.table(paste(dir_train, "X_train.txt", sep = ""))
 	     X_test = read.table(paste(dir_test, "X_test.txt", sep = ""))
 	     y_train = read.table(paste(dir_train, "y_train.txt", sep = ""))
@@ -21,8 +21,9 @@ run_analysis <- function() {
 	     (split.list <- strsplit(combined[[1]], '\\n')) 
 	     colnames(X_all) <- split.list[[1]]	    # Assign the column names they used to my new combined data
 	     mean_loc <-grep("mean", names(X_all))  #Pick out means
+	     Mean_loc <-grep("Mean", names(X_all))  #Pick out Means
 	     std_loc <-grep("std", names(X_all))    #Pick out standard deviations
-	     new_cols <- c(mean_loc, std_loc)	    #Make one array that has both means and stdev
+	     new_cols <- c(mean_loc, Mean_loc, std_loc)	    #Make one array that has both means and stdev
 	     X_cut <- X_all[new_cols]		    #Cut Big array to just those
 	     
 
@@ -51,5 +52,6 @@ run_analysis <- function() {
 	     
 	     
 	     ### Write out tidy data set
-	     write.table(X_tidy, file = "tidy_data.txt", row.names = FALSE)
+	     new_names
+	     #write.table(X_tidy, file = "tidy_data.txt", row.names = FALSE)
 }
