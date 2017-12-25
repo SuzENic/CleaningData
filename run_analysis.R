@@ -1,9 +1,9 @@
 run_analysis <- function() {
 	     ### Read in Files
-	     dir_train = "UCI_HAR_Dataset/train/"
-	     dir_test = "UCI_HAR_Dataset/test/"
-	     #dir_train = ""
-	     #dir_test = ""
+	     #dir_train = "UCI_HAR_Dataset/train/"
+	     #dir_test = "UCI_HAR_Dataset/test/"
+	     dir_train = ""
+	     dir_test = ""
 	     X_train = read.table(paste(dir_train, "X_train.txt", sep = ""))
 	     X_test = read.table(paste(dir_test, "X_test.txt", sep = ""))
 	     y_train = read.table(paste(dir_train, "y_train.txt", sep = ""))
