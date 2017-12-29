@@ -8,11 +8,14 @@ run_analysis <- function() {
 	     X_test = read.table(paste(dir_test, "X_test.txt", sep = ""))
 	     y_train = read.table(paste(dir_train, "y_train.txt", sep = ""))
 	     y_test = read.table(paste(dir_test, "y_test.txt", sep = ""))
-	
+	     subject_train = read.table(paste(dir_train, "subject_train.txt", sep = ""))
+	     subject_test = read.table(paste(dir_test, "subject_test.txt", sep = ""))
+       	
      
 	     ### Merge training and test
 	     X_all <- rbind(X_test, X_train)
 	     y_all <- rbind(y_test, y_train)
+	     sub_all <- rbind(subject_test, subject_train)
 
 
 	     ### Extract mean and Standard Deviation information
@@ -30,9 +33,13 @@ run_analysis <- function() {
 	     ### Add a column of factor for activity labels
 	     activity_lables <- c("Walking","Walking_Upstairs","Walking_Downstairs","Sitting","Standing","Laying")
 	     act.factor <- factor(activity_lables)
+	     sub.factor <- factor(1:30)
 	     y_all <- data.frame(apply(y_all, 2, as.factor))
+	     sub_all <- data.frame(apply(sub_all, 2, as.factor))
 	     levels(y_test$V1) <- act.factor
+	     levels(sub_all$V1) <- sub.factor
 	     X_cut$activity <-y_all$V1
+	     X_cut$subject <-sub_all$V1
  	     
 
 	     ### Change variable names 
@@ -45,13 +52,12 @@ run_analysis <- function() {
 
 	     ### create tidy with averages for each activity label!
 	     m <- length(new_cols)+1
-	     X_tidy <- matrix(1:6,1:6, ncol = m, nrow = 6, dimnames = list(activity_lables, new_names))
+	     X_tidy <- matrix(1:6,1:180, ncol = m, nrow = 180)#, dimnames = list(activity_lables, new_names))
 	     for (i in 1:m) { ### In process
-	     	 X_tidy[,i] <- with(X_cut, tapply(as.numeric(X_cut[,i]), X_cut$activity, mean))
+	     	 X_tidy[,i] <- with(X_cut, tapply(as.numeric(X_cut[,i]),list(X_cut$activity, X_cut$subject), mean))
 	     }
 	     
-	     
 	     ### Write out tidy data set
-	     new_names
-	     #write.table(X_tidy, file = "tidy_data.txt", row.names = FALSE)
+	     #	     X_tidy
+	     write.table(X_tidy, file = "tidy_data.txt", row.names = FALSE)
 }
